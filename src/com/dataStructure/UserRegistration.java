@@ -47,9 +47,10 @@ public class UserRegistration {
     }
 
     public static boolean password(String password) {
-       // String pattern = "[a-zA-Z0-9]{8,}$";
-        String pattern = "^[A-Z]{1}[a-zA-Z0-9]{7,}$";
-        if (password.matches(pattern)) {
+        String pattern1 = "[a-zA-Z0-9]{8,}$";
+        String pattern2 = "^[A-Z]{1}[a-zA-Z0-9]{7,}$";
+        String pattern3 = "^[A-Z]{1}+[a-zA-z1-9]{6,}[1-9]{1}$";
+        if (password.matches(pattern3)) {
             return true;
         }
         return false;
