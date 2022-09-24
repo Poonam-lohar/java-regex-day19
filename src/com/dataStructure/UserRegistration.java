@@ -15,6 +15,8 @@ public class UserRegistration {
         String Email = mail.nextLine();
         System.out.println("Enter your Mobile Number:");
         String MobNo = scan.nextLine();
+        System.out.println("Enter password:");
+        String password = scan.nextLine();
 
 
         System.out.println("first name is : " + firstName);
@@ -25,6 +27,7 @@ public class UserRegistration {
         System.out.println("EmailID is : " + Email(Email));
         System.out.println("mobile number is : " + MobNo);
         System.out.println("mobile number is : " + MobNo(MobNo));
+        System.out.println("Password is " + password(password));
     }
 
     private static boolean firstName(String firstName) {
@@ -38,7 +41,16 @@ public class UserRegistration {
     public static boolean Email(String Email) {
         return Email.matches("^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?");
     }
+
     private static boolean MobNo(String MobNo) {
         return MobNo.matches("^(91)\\s{1}[7-9]{1}[0-9]{9}$");
+    }
+
+    public static boolean password(String password) {
+        String pattern = "[a-zA-Z0-9]{8,}$";
+        if (password.matches(pattern)) {
+            return true;
+        }
+        return false;
     }
 }
